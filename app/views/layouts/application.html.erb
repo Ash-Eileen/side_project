@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SideProject</title>
+    <title><%= yield(:title) %> | SharePets</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <%= render "shared/header" %>
+    <%= render "shared/nav" %>
     <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>
