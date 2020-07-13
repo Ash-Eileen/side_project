@@ -1,2 +1,11 @@
-<h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<% provide(:title, @pet.name) %>
+
+<h1><%= @pet.name %></h1>
+<%= image_tag @pet.picture if @pet.picture.attached? %>
+<p><%= @pet.animal %></p>
+<p><%= @pet.bio %></p>
+
+<%= link_to "edit", edit_pet_path(@pet) %>
+<%= link_to "delete", pet_path(@pet), method: :delete, data: {confirm: "Really delete the pet?"} %>
+
+<%= link_to "<< Back to Pet List", pets_path %>

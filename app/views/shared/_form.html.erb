@@ -1,0 +1,29 @@
+<%= form_for(@pet, html: {multipart: true}) do |f| %>
+    <ul>
+    <% @pet.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </ul>
+    <p>
+        <%= f.label :name %>
+        <br>
+        <%= f.text_field :name %>
+    </p>
+        <% @animal_types.each do |option| %>
+        <%= f.label option %>
+        <%= f.radio_button :animal, option %>
+    <% end %>
+    <p>
+        <%= f.label :bio %>
+        <br>
+        <%= f.text_field :bio %>
+    </p>
+    <p>
+        <%= image_tag @pet.picture if @pet.picture.attached? %>
+        <%= f.label :picture %> 
+        <%= f.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

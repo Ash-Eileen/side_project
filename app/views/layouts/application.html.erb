@@ -12,6 +12,7 @@
   <body>
     <%= render "shared/header" %>
     <%= render "shared/nav" %>
+    <p class="flash"><%= flash.notice %></p>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>

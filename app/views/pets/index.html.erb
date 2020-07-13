@@ -1,2 +1,12 @@
 <% provide(:title, "Home") %>
 
+<ul id="pets">
+    <% @pets.each do | pet | %>
+        <li>
+            <%= link_to pet.name, pet_path(pet) %>
+            <br>
+            <%= image_tag pet.picture if pet.picture.attached? %>
+        </li>
+    <% end %>
+</ul>
+
