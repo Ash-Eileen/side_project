@@ -9,6 +9,7 @@
         <br>
         <%= f.text_field :name %>
     </p>
+        <p>Type of animal</p>
         <% @animal_types.each do |option| %>
         <%= f.label option %>
         <%= f.radio_button :animal, option %>
@@ -20,7 +21,10 @@
     </p>
     <p>
         <%= image_tag @pet.picture if @pet.picture.attached? %>
+    </p>
+    <p>
         <%= f.label :picture %> 
+        <br>
         <%= f.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
     </p>
     <p>

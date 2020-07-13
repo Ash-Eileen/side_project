@@ -2,7 +2,8 @@
 
 <h1><%= @random.name %></h1>
 <%= image_tag @random.picture if @random.picture.attached? %>
-<p><%= @random.animal %></p>
+<p><%= @random.animal.capitalize %></p>
+<h5>Bio:</h5>
 <p><%= @random.bio %></p>
 
 <%= link_to "<< Back to Pet List", pets_path %>
